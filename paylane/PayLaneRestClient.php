@@ -325,6 +325,20 @@ class PayLaneRestClient
     }
 
     /**
+     * Cancels Paypal recurring profile
+     *
+     * @param $params Paypal params
+     * @return array
+     */
+    public function paypalStopRecurring($params)
+    {
+        return $this->call('paypal/stopRecurring',
+            'post',
+            $params
+        );
+    }
+
+    /**
      *  Performs resale by sale ID
      *
      * @param $params Resale by sale params
