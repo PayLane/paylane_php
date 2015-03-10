@@ -1,0 +1,27 @@
+{
+	"name": "paylane/client",
+	"description": "PayLane REST Client for PHP",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Marcel Tyszkiewicz",
+			"email": "marcel.tyszkiewicz@paylane.com"
+		},
+		{
+			"name": "Wojciech Petriczek",
+			"email": "wojciech.petriczek@paylane.com"
+		},
+		{
+			"name": "Maciej Łebkowski",
+			"email": "m.lebkowski@gmail.com"
+		}
+	],
+	"require": {
+		"php": "~5.3",
+		"ext-json": "*",
+		"ext-curl": "*"
+	},
+	"autoload": {
+		"classmap": ["paylane/PayLaneRestClient.php"]
+	}
+}
