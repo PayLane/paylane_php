@@ -102,7 +102,7 @@ class PayLaneRestClient
     /**
      * Performs card sale
      *
-     * @param $params Sale Params
+     * @param array $params Sale Params
      * @return array
      */
     public function cardSale($params)
@@ -117,7 +117,7 @@ class PayLaneRestClient
     /**
      * Performs card sale by token
      *
-     * @param $params Sale Params
+     * @param array $params Sale Params
      * @return array
      */
     public function cardSaleByToken($params)
@@ -132,7 +132,7 @@ class PayLaneRestClient
     /**
      * Card authorization
      *
-     * @param $params Authorization params
+     * @param array $params Authorization params
      * @return array
      */
     public function cardAuthorization($params)
@@ -147,7 +147,7 @@ class PayLaneRestClient
     /**
      * Card authorization by token
      *
-     * @param $params Authorization params
+     * @param array $params Authorization params
      * @return array
      */
     public function cardAuthorizationByToken($params)
@@ -177,7 +177,7 @@ class PayLaneRestClient
     /**
      * Performs capture from authorized card
      *
-     * @param $params Capture authorization params
+     * @param array $params Capture authorization params
      * @return array
      */
     public function captureAuthorization($params)
@@ -192,7 +192,7 @@ class PayLaneRestClient
     /**
      * Performs closing of card authorization, basing on authorization card ID
      *
-     * @param $params Close authorization params
+     * @param array $params Close authorization params
      * @return array
      */
     public function closeAuthorization($params)
@@ -207,7 +207,7 @@ class PayLaneRestClient
     /**
      * Performs refund
      *
-     * @param $params Refund params
+     * @param array $params Refund params
      * @return array
      */
     public function refund($params)
@@ -222,7 +222,7 @@ class PayLaneRestClient
     /**
      * Get sale info
      *
-     * @param $params Get sale info params
+     * @param array $params Get sale info params
      * @return array
      */
     public function getSaleInfo($params)
@@ -237,7 +237,7 @@ class PayLaneRestClient
     /**
      * Get sale authorization info
      *
-     * @param $params Get sale authorization info params
+     * @param array $params Get sale authorization info params
      * @return array
      */
     public function getAuthorizationInfo($params)
@@ -252,7 +252,7 @@ class PayLaneRestClient
     /**
      * Performs sale status check
      *
-     * @param $params Check sale status
+     * @param array $params Check sale status
      * @return array
      */
     public function checkSaleStatus($params)
@@ -267,7 +267,7 @@ class PayLaneRestClient
     /**
      * Direct debit sale
      *
-     * @param $params Direct debit params
+     * @param array $params Direct debit params
      * @return array
      */
     public function directDebitSale($params)
@@ -282,7 +282,7 @@ class PayLaneRestClient
     /**
      * Sofort sale
      *
-     * @param $params Sofort params
+     * @param array $params Sofort params
      * @return array
      */
     public function sofortSale($params)
@@ -297,7 +297,7 @@ class PayLaneRestClient
     /**
      * Bank transfer sale
      *
-     * @param $params Bank transfer sale params
+     * @param array $params Bank transfer sale params
      * @return array
      */
     public function bankTransferSale($params)
@@ -312,7 +312,7 @@ class PayLaneRestClient
     /**
      * PayPal sale
      *
-     * @param $params Paypal sale params
+     * @param array $params Paypal sale params
      * @return array
      */
     public function paypalSale($params)
@@ -327,7 +327,7 @@ class PayLaneRestClient
     /**
      * Cancels Paypal recurring profile
      *
-     * @param $params Paypal params
+     * @param array $params Paypal params
      * @return array
      */
     public function paypalStopRecurring($params)
@@ -341,7 +341,7 @@ class PayLaneRestClient
     /**
      *  Performs resale by sale ID
      *
-     * @param $params Resale by sale params
+     * @param array $params Resale by sale params
      * @return array
      */
     public function resaleBySale($params)
@@ -356,7 +356,7 @@ class PayLaneRestClient
     /**
      * Performs resale by authorization ID
      *
-     * @param $params Resale by authorization params
+     * @param array $params Resale by authorization params
      * @return array
      */
     public function resaleByAuthorization($params)
@@ -371,7 +371,7 @@ class PayLaneRestClient
     /**
      * Checks if a card is enrolled in the 3D-Secure program.
      *
-     * @param $params Is card 3d secure params
+     * @param array $params Is card 3d secure params
      * @return array
      */
     public function checkCard3DSecure($params)
@@ -386,7 +386,7 @@ class PayLaneRestClient
     /**
      * Checks if a card is enrolled in the 3D-Secure program, based on the card's token.
      *
-     * @param $params Is card 3d secure params
+     * @param array $params Is card 3d secure params
      * @return array
      */
     public function checkCard3DSecureByToken($params)
@@ -401,7 +401,7 @@ class PayLaneRestClient
     /**
      * Performs sale by ID 3d secure authorization
      *
-     * @param $params Sale by 3d secure authorization params
+     * @param array $params Sale by 3d secure authorization params
      * @return array
      */
     public function saleBy3DSecureAuthorization($params)
@@ -416,7 +416,7 @@ class PayLaneRestClient
     /**
      * Perform check card
      *
-     * @param $params Check card params
+     * @param array $params Check card params
      * @return array
      */
     public function checkCard($params)
@@ -431,7 +431,7 @@ class PayLaneRestClient
     /**
      * Perform check card by token
      *
-     * @param $params Check card params
+     * @param array $params Check card params
      * @return array
      */
     public function checkCardByToken($params)
@@ -485,7 +485,7 @@ class PayLaneRestClient
     /**
      * Checking error mechanism
      *
-     * @param array $validateArray
+     * @param array $validate_params
      * @throws \Exception
      */
     protected function checkForErrors($validate_params)
