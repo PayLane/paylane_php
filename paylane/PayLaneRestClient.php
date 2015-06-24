@@ -319,7 +319,7 @@ class PayLaneRestClient
         return $this->call(
             'ideal/bankcodes',
             'get',
-            array(),
+            array()
         );
     }
 
