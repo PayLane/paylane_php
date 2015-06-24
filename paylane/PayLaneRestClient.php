@@ -295,6 +295,35 @@ class PayLaneRestClient
     }
 
     /**
+     * iDeal sale
+     *
+     * @param $params iDeal transaction params
+     * @return array
+     */
+    public function idealSale($params)
+    {
+        return $this->call(
+            'ideal/sale',
+            'post',
+            $params
+        );
+    }
+
+    /**
+     * iDeal banks list
+     *
+     * @return array
+     */
+	public function idealBankCodes()
+    {
+        return $this->call(
+            'ideal/bankcodes',
+            'get',
+            array(),
+        );
+    }
+
+    /**
      * Bank transfer sale
      *
      * @param array $params Bank transfer sale params
