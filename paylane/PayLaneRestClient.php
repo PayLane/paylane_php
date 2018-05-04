@@ -49,10 +49,10 @@ class PayLaneRestClient
      * @var boolean
      */
     protected $ssl_verify = true;
-    
+
     /**
      * Constructor
-     * 
+     *
      * @param string $username Username
      * @param string $password Password
      */
@@ -60,7 +60,7 @@ class PayLaneRestClient
     {
         $this->username = $username;
         $this->password = $password;
-        
+
         $validate_params = array
         (
             false === extension_loaded('curl') => 'The curl extension must be loaded for using this class!',
@@ -71,24 +71,24 @@ class PayLaneRestClient
 
     /**
      * Set Api URL
-     * 
+     *
      * @param string $url Api URL
      */
     public function setUrl($url)
     {
         $this->api_url = $url;
     }
-    
+
     /**
      * Sets SSL verify
-     * 
+     *
      * @param bool $ssl_verify SSL verify
      */
     public function setSSLverify($ssl_verify)
     {
         $this->ssl_verify = $ssl_verify;
     }
-    
+
     /**
      * Request state getter
      *
@@ -158,7 +158,7 @@ class PayLaneRestClient
             $params
         );
     }
-    
+
     /**
      * PayPal authorization
      *
@@ -233,7 +233,7 @@ class PayLaneRestClient
             $params
         );
     }
-    
+
     /**
      * Get sale authorization info
      *
@@ -337,7 +337,7 @@ class PayLaneRestClient
             $params
         );
     }
-    
+
     /**
      * PayPal sale
      *
@@ -441,7 +441,7 @@ class PayLaneRestClient
             $params
         );
     }
-    
+
     /**
      * Perform check card
      *
@@ -456,7 +456,7 @@ class PayLaneRestClient
             $params
         );
     }
-    
+
     /**
      * Perform check card by token
      *
@@ -468,6 +468,36 @@ class PayLaneRestClient
         return $this->call(
             'cards/checkByToken',
             'get',
+            $params
+        );
+    }
+
+    /**
+     * Performs Apple Pay sale
+     *
+     * @param  array $params Apple Pay sale params
+     * @return array
+     */
+    public function applePaySale(array $params)
+    {
+        return $this->call(
+            'applepay/sale',
+            'post',
+            $params
+        );
+    }
+
+    /**
+     * Performs Apple Pay authorization
+     *
+     * @param  array $params Apple Pay authorization params
+     * @return array
+     */
+    public function applePayAuthorization(array $params)
+    {
+        return $this->call(
+            'applepay/authorization',
+            'post',
             $params
         );
     }
@@ -488,7 +518,7 @@ class PayLaneRestClient
         {
             $params = (array) $params;
         }
-        
+
         $validate_params = array
         (
             false === is_string($method) => 'Method name must be string',
@@ -498,7 +528,7 @@ class PayLaneRestClient
         $this->checkForErrors($validate_params);
 
         $params_encoded = json_encode($params);
-        
+
         $response = $this->pushData($method, $request, $params_encoded);
 
         $response = json_decode($response, true);
@@ -569,7 +599,7 @@ class PayLaneRestClient
         curl_setopt($ch, CURLOPT_USERPWD, $this->username . ':' . $this->password);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->ssl_verify);
-        
+
         $response = curl_exec($ch);
 
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -585,7 +615,7 @@ class PayLaneRestClient
         }
 
         curl_close($ch);
-        
+
         return $response;
     }
 }
