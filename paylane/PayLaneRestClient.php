@@ -51,16 +51,18 @@ class PayLaneRestClient
     protected $ssl_verify = true;
 
     /**
+     * @var string
+     */
+    protected $public_api_key;
+
+    /**
      * Constructor
      *
      * @param string $username Username
      * @param string $password Password
      */
-    public function __construct($username, $password)
+    public function __construct()
     {
-        $this->username = $username;
-        $this->password = $password;
-
         $validate_params = array
         (
             false === extension_loaded('curl') => 'The curl extension must be loaded for using this class!',
@@ -68,7 +70,16 @@ class PayLaneRestClient
         );
         $this->checkForErrors($validate_params);
     }
-
+    /**
+     * Set Crednetials for Api
+     *
+     * @param array of string $credentials having username, password
+     */
+    public function setCredentials($credentials)
+    {
+        $this->username = $credentials['username'];
+        $this->password = $credentials['password'];
+    }
     /**
      * Set Api URL
      *
@@ -77,6 +88,16 @@ class PayLaneRestClient
     public function setUrl($url)
     {
         $this->api_url = $url;
+    }
+
+    /**
+     * Set Public API Key
+     *
+     * @param string $apiKey Api key
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->public_api_key = $apiKey;
     }
 
     /**
@@ -575,7 +596,6 @@ class PayLaneRestClient
 
         return false;
     }
-
     /**
      * Method responsible for pushing data to REST server
      *
