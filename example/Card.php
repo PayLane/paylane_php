@@ -7,9 +7,9 @@
 	<?php 
 		include '../paylane/Card.php';
 		try {
-			$paylane = new Card('support@photobash.co', 'Photobash2018!');
-			$paylane->setUrl('https://direct.paylane.com/rest.js/');
-			$paylane->setApiKey('05c785c203071ccd4a0ffcfd3598dc008af0d4ff');
+			$paylane = new Card('b806b156050700c83f01338fa3d8ec1e', 'cho2%CI4!GU9#');
+			$paylane->setUrl('https://direct.paylane.com/rest/');
+			$paylane->setApiKey('4ebc52bd16bdbf200aac44c5313c5fe2cde38ad2');
 			$paylane->setCardDetails(
 				array(
 					'card_number' => "4111111111111111",
