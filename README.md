@@ -8,6 +8,12 @@ Code snippets, full API documetation, plugins, integration examples and much mor
 
 All the code examples in the Developer Zone are based on these official REST clients.
 
+# How to install
+
+```
+composer req paylane/client
+```
+
 # License
 
 MIT license. See the LICENSE file for more details.
