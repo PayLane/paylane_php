@@ -426,6 +426,21 @@ class PayLaneRestClient
             $params
         );
     }
+	
+    /**
+     * Performs card authorization by ID 3d secure authorization
+     *
+     * @param array $params Sale by 3d secure authorization params
+     * @return array
+     */
+    public function cardAuthorizationBy3DSecure($params)
+    {
+        return $this->call(
+            '3DSecure/auth',
+            'post',
+            $params
+        );
+    }
 
     /**
      * Performs sale by ID 3d secure authorization
