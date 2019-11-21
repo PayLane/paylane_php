@@ -1,6 +1,6 @@
 {
 	"name": "paylane/paylane-client",
-	"description": "PayLane REST Client for PHP",
+	"description": "Official PayLane REST Client for PHP",
 	"license": "MIT",
 	"authors": [
 		{
